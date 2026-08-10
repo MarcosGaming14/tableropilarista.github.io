@@ -1,0 +1,264 @@
+================================================================
+   BITÁCORAS DE DESARROLLO — S.I.O.C.I. EL TABLERO PILARISTA
+   Institución Educativa Urbana Nuestra Señora del Pilar
+   Agosto 2026
+================================================================
+
+
+================================================================
+📅 BITÁCORA #1 — LUNES 4 DE AGOSTO DE 2026
+Tema: Estructura inicial y configuración del proyecto
+================================================================
+
+Qué se hizo:
+- Creación de la carpeta del proyecto APP WEB - TABLERO PILARISTA/TP
+- Configuración de archivos base: index.html, style.css, app.js
+- Integración de Tailwind CSS vía CDN
+- Carga de tipografía Inter desde Google Fonts
+- Configuración del modo dark/light con variables CSS
+- Creación del favicon SVG (logo institucional)
+
+Decisiones técnicas:
+- Se eligió JavaScript puro (sin frameworks) para mayor control
+- Tailwind CSS para estilos rápidos y responsivos
+- localStorage para persistencia de datos local
+
+Avance: 5% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #2 — MARTES 5 DE AGOSTO DE 2026
+Tema: Layout principal y sistema de navegación
+================================================================
+
+Qué se hizo:
+- Diseño del Sidebar con navegación lateral
+- Creación del TopBar con perfil de usuario
+- Sistema de vistas (Dashboard, Eventos, Comunicados)
+- Implementación de switchView() para alternar entre secciones
+- HTML semántico con estructura de contenedores
+
+Componentes creados:
+- Sidebar con botones de navegación
+- Header con nombre de usuario e inicial
+- Contenedor principal de contenido
+- Overlay para móvil
+
+Problemas resueltos:
+- El sidebar no se ocultaba en móvil → Se agregó sidebar-overlay
+
+Avance: 15% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #3 — MIÉRCOLES 6 DE AGOSTO DE 2026
+Tema: Sistema de login y Canvas WebGL
+================================================================
+
+Qué se hizo:
+- Formulario de login con diseño glassmorphism
+- Validación de credenciales (usuario: Prof. Erika, clave: 12345)
+- Implementación de Three.js para canvas WebGL 3D
+- Animación de partículas flotantes en fondo
+- Transición de login → bienvenida → dashboard
+
+Tecnologías:
+- Three.js r128 para gráficos 3D
+- Canvas WebGL con animación requestAnimationFrame
+- Efecto glassmorphism en tarjeta de login
+
+Avance: 25% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #4 — JUEVES 7 DE AGOSTO DE 2026
+Tema: Dashboard y sistema de eventos
+================================================================
+
+Qué se hizo:
+- Dashboard con estadísticas (total eventos, próximos, completados)
+- Tarjetas de eventos activos con barra de progreso
+- Timeline institucional cronológica
+- Panel de alertas inteligentes
+- CRUD completo de eventos (Crear, Leer, Actualizar, Eliminar)
+
+Funcionalidades:
+- Formulario de creación de eventos
+- Filtros por estado y tipo
+- Búsqueda por nombre o docente
+- Botón "Ver todos" para navegación
+
+Avance: 35% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #5 — VIERNES 8 DE AGOSTO DE 2026
+Tema: Editor de roles y árbol jerárquico
+================================================================
+
+Qué se hizo:
+- Árbol jerárquico interactivo (Módulo B)
+- Nodo raíz: Coordinador General
+- Nodos secundarios: Áreas operativas
+- Hojas: Roles estudiantiles
+- Agregar, editar y eliminar áreas
+- Agregar, editar y eliminar estudiantes
+
+Estructura de datos:
+  rolesTree: {
+    id: 'node_root',
+    title: 'Coordinador General',
+    assignee: 'Prof. Erika',
+    children: [...]
+  }
+
+Problemas resueltos:
+- El árbol no se actualizaba → Se creó renderTreeSection()
+- La eliminación no funcionaba → Se implementó deleteNodeFromTree()
+
+Avance: 50% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #6 — SÁBADO 9 DE AGOSTO DE 2026
+Tema: Módulo de impresión y diseño de tarjetas
+================================================================
+
+Qué se hizo:
+- Generador de tarjetas de rol imprimibles
+- Ficha del evento con todos los datos
+- Lista de áreas y roles
+- Código QR con datos del evento
+- Watermark "S.I.O.C.I." institucional
+- Botón de imprimir funcional
+
+Componentes de impresión:
+- Encabezado con logo institucional
+- Datos del evento (fecha, coordinador, tipo)
+- Árbol de roles completo
+- Código QR generado con qr-code-styling
+- Pie de página con marca de agua
+
+Avance: 65% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #7 — DOMINGO 10 DE AGOSTO DE 2026
+Tema: Comunicados y sistema de notificaciones
+================================================================
+
+Qué se hizo:
+- CRUD de comunicados institucionales
+- Categorías: URGENTE, INFORMATIVO, RECORDATORIO
+- Sistema de lectura (marcar como leído)
+- Badge de comunicados no leídos
+- Modal de creación de comunicados
+
+Avance: 70% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #8 — LUNES 11 DE AGOSTO DE 2026
+Tema: Modales y sistema de confirmación
+================================================================
+
+Qué se hizo:
+- Modal de confirmación personalizado (reemplazo de alert())
+- Animaciones de entrada/salida
+- Iconos dinámicos (papelera, alerta, check)
+- Efecto shake en botón cancelar
+- Sistema de toast/notificaciones
+
+Mejoras de UX:
+- Confirmación antes de eliminar eventos
+- Confirmación antes de eliminar áreas
+- Confirmación antes de eliminar estudiantes
+- Feedback visual en cada acción
+
+Avance: 75% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #9 — MARTES 12 DE AGOSTO DE 2026
+Tema: Sistema de fases y calificación
+================================================================
+
+Qué se hizo:
+- 4 fases automáticas: Planificación → Preparación → Ejecución → Evaluación
+- Barra de progreso por fases con dots
+- Sistema de calificación por estrellas (1-5)
+- Rating automático al completar fases
+- Animaciones de glow y pulso
+
+Lógica de fases:
+- Planificación: Al crear evento
+- Preparación: Cuando hay ≥1 rol asignado
+- Ejecución: En la fecha del evento
+- Evaluación: Después del evento
+
+Avance: 80% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #10 — MIÉRCOLES 13 DE AGOSTO DE 2026
+Tema: Fondos GL y pulido visual
+================================================================
+
+Qué se hizo:
+- Figuras de fondo animadas (blobs, hexágonos, dots)
+- Grid lines sutiles con movimiento
+- Efectos de blur y gradientes
+- Dark mode optimizado
+- Responsive completo (mobile-first)
+
+Elementos visuales:
+- 5 blobs flotantes con gradientes
+- Hexágonos rotatorios
+- 7 dots pulsantes
+- Grid lines animadas
+- Efectos de glow en fases
+
+Avance: 85% del proyecto total
+
+
+================================================================
+📅 BITÁCORA #11 — JUEVES 14 DE AGOSTO DE 2026
+Tema: Alertas inteligentes y optimización
+================================================================
+
+Qué se hizo:
+- Alertas con contexto y acciones sugeridas
+- Tipos: Urgente, Sin coordinador, Sin áreas, Fecha cercana, Sin calificar
+- Navegación directa desde alerta al evento
+- Limpieza de código muerto
+- Optimización de rendimiento
+
+Avance: 90% del proyecto total
+
+
+================================================================
+📊 RESUMEN DE AVANCE
+================================================================
+
+| Módulo                     | Estado      | Días trabajados |
+|----------------------------|-------------|-----------------|
+| Layout y Navegación        | ✅ 100%     | Días 2-3        |
+| Login y WebGL              | ✅ 100%     | Día 3           |
+| Dashboard                  | ✅ 100%     | Días 4, 8, 11   |
+| Eventos CRUD               | ✅ 100%     | Días 4-5        |
+| Árbol de Roles             | ✅ 100%     | Días 5-6        |
+| Impresión                  | ✅ 100%     | Día 6           |
+| Comunicados                | ✅ 100%     | Día 7           |
+| Fases y Rating             | ✅ 100%     | Día 9           |
+| Fondos GL                  | ✅ 100%     | Día 10          |
+| Alertas                    | ✅ 100%     | Día 11          |
+
+Estado actual: 90% completado
+Pendiente: Certificados, Subtasks, Encuestas
+
+
+================================================================
+FIN DE BITÁCORAS
+S.I.O.C.I. — Tablero Pilarista
+I.E. Nuestra Señora del Pilar
+================================================================
